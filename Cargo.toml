@@ -1,0 +1,23 @@
+[package]
+name = "kensei"
+version = "0.1.0"
+edition = "2021"
+description = "Kensei (剣聖) - Blazing-fast Rust build tool and file watcher"
+license = "MIT"
+repository = "https://github.com/Bmd67/kensei"
+keywords = ["build-tool", "file-watcher", "cli"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+notify = "6"
+tokio = { version = "1", features = ["full"] }
+colored = "2"
+
+[dev-dependencies]
+tempfile = "3"
+assert_cmd = "2"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
